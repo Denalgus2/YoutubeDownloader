@@ -8,7 +8,8 @@ if not os.path.exists(output_directory):
     os.makedirs(output_directory)
 
 # YouTube video URL
-video_url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+
+video_url = input("Enter the youtube video url: ")
 
 # Download video and audio
 yt = YouTube(video_url)
@@ -20,8 +21,8 @@ audio_stream = yt.streams.filter(only_audio=True, file_extension='mp4').order_by
 print(video_stream)
 
 # Download video and audio
-#video_stream.download(output_directory, filename='video.mp4')
-#audio.download(output_directory, filename='audio.mp4')
+video_stream.download(output_directory, filename='video.mp4')
+audio_stream.download(output_directory, filename='audio.mp4')
 
 
 #merge audio and video
